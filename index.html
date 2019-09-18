@@ -5,6 +5,7 @@
 <meta charset="UTF-8">
 <meta name="robots" content="noindex">
 <title>Beau Conti</title>
+<meta name="viewport" content="width=device-width">
 <style>
     @import url('https://fonts.googleapis.com/css?family=Karla&display=swap');
 
@@ -28,7 +29,7 @@
 
 body {
   margin: 0;
-  font-family: Karla, sans-serif;
+  font-family: Karla;
 }
 
 a {
@@ -104,16 +105,9 @@ a:visited {
   align-items: center;
   justify-content: center;
   position: relative;
-
+ pointer-events: none;
 }
 
-iframe {
-  overflow: hidden;
-  position: absolute;
-  min-height: 100%;
-  min-width: 100%;
-  border: none;
-}
 
 #tagline {
   flex-grow: 0;
@@ -734,7 +728,7 @@ Modeled and animated 3D giraffe in Blender and exported to 3d Javascript environ
 </div>
 <div class="siema-control-container"></div>
 </div>
- <div class="sample-container-caption">Personal Projects</div>
+<div class="sample-container-caption">Personal Projects</div>
 </div>
 </div>
 </div>
@@ -751,11 +745,11 @@ And bringing joy to our virtual lives
 <a href="mailto:hire@beau.earth">hire@beau.earth</a>
 </div>
 </div>
-<div id="external-links"><a href="https://codepen.io/broregard" target="_blank">codepen</a>
+<div id="external-links"><a href="https://codepen.io/broregard" target="_blank">codepen</a> / <a href="https://github.com/broregard" target="_blank">github</div>
 </div>
 </div>
-<script src='https://pawelgrzybek.com/siema/assets/siema.min.js'></script>
-<script src='https://unpkg.com/zdog@1/dist/zdog.dist.js'></script>
+<script src="https://unpkg.com/zdog@1/dist/zdog.dist.min.js"></script>
+<script src="zdog-demo.js"></script>
 <script id="rendered-js">
       function buildControls() {
   const funcName = this.selector.dataset.func;
@@ -818,7 +812,7 @@ var illo = new Zdog.Illustration({
   element: illoElem,
   zoom: zoom,
   resize: true,
-  translate: {y:20},
+  translate: {y:20, x:10},
   rotate: sceneStartRotation,
   dragRotate: true,
   onDragStart: function() {
@@ -1315,4 +1309,3 @@ animate();
     </script>
 </body>
 </html>
-
