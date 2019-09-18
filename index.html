@@ -1,0 +1,1318 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex">
+<title>Beau Conti</title>
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Karla&display=swap');
+
+:root {
+  --boat: url("https://dl.dropboxusercontent.com/s/56s99mh4d8hef9h/boat3.jpg");
+  --film: url("https://dl.dropboxusercontent.com/s/aa50bsc8zw9iyyt/film2.png");
+  --game: url("https://dl.dropboxusercontent.com/s/3dyeh4omt0fqdty/blocky.png");
+  --blocky: url("https://dl.dropboxusercontent.com/s/g4f0lrus24s19fg/blockymov.gif");  
+  --splitflap: url("https://dl.dropboxusercontent.com/s/2g4kzz6m3kw18fw/splitflap.gif");
+  --simon: url("https://dl.dropboxusercontent.com/s/psc03tjvabq3imh/simongame.gif");
+  --vaporwave: url("https://dl.dropboxusercontent.com/s/u3nllh3vrqf3qyd/vaporwave.gif");
+  --giraffe: url("https://dl.dropboxusercontent.com/s/gc6r1hinjejyuxd/giraffemov.gif");
+  --seagull: url("https://dl.dropboxusercontent.com/s/ag1kvyedqkt2vs8/seagull2.gif");
+  
+
+  --miy: url("https://dl.dropboxusercontent.com/s/hum3mnlictseiny/miy.png");
+  
+  --font-size: 24px;
+}
+
+
+body {
+  margin: 0;
+  font-family: Karla, sans-serif;
+}
+
+a {
+  color: white;
+  text-decoration: underline;
+}
+
+a:visited {
+  color: white;
+}
+
+.app {
+  width: 100%;
+}
+
+.slide {
+  height: 100vh;
+}
+
+#slide-one {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.flex-container {
+  margin: 80px 200px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.flex-container > div {
+  flex-grow: 1;
+}
+
+
+
+
+#navbar {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  font-size: var(--font-size);
+  flex-grow: 0;
+}
+
+#menu {
+  display: flex;
+}
+#menu a {
+  color: black;
+  text-decoration: none;
+  transition: color .2s;
+}
+
+#menu a:hover {
+  color: hsl(230,70%,68%);
+}
+
+#menu a:visited {
+  color: black;
+  text-decoration: none;
+}
+
+#menu div:last-child {
+  margin-left: 20px;
+}
+
+#iframe {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+}
+
+iframe {
+  overflow: hidden;
+  position: absolute;
+  min-height: 100%;
+  min-width: 100%;
+  border: none;
+}
+
+#tagline {
+  flex-grow: 0;
+  font-size: var(--font-size);
+  padding-top: 10px;
+  padding-bottom: 5px;
+}
+
+
+
+
+#slide-two {
+  background-color: hsl(230,70%,98%);
+  display: flex;
+}
+
+
+#slide-two .flex-container {
+  flex-grow: 1;
+  flex-direction: row;
+}
+
+
+#left-side {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+#right-side {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+#sample-webapp {
+  margin-top: -170px;
+  width: 500px;
+}
+
+#sample-webapp > .sample-slider-container {
+  height: 400px;
+}
+
+
+#sample-hobby {
+  margin-right: calc(500px - 350px);;
+  margin-bottom: -170px;
+  width: 350px;
+}
+
+#sample-hobby > .sample-slider-container {
+  height: 450px;
+}
+
+#sample-hobby > .sample-container-caption {
+  text-align: center;
+}
+
+
+#sample-ecommerce{
+  margin-top: -170px;
+  width: 450px;
+}
+
+#sample-ecommerce > .sample-slider-container {
+  height: 350px;
+}
+
+#slide-miy {
+  background-image: var(--miy);
+  background-size: auto 80%;
+}
+
+#slide-boat {
+  background-image: var(--boat);
+}
+
+#slide-film {
+  background-image: var(--film);
+  background-color: white;
+  background-size: 90% auto;
+}
+
+#slide-giraffe {
+  background-image: var(--giraffe);
+}
+
+#slide-simon {
+  background-image: var(--simon);
+}
+
+#slide-splitflap {
+  background-image: var(--splitflap);
+}
+
+#slide-vaporwave {
+  background-image: var(--vaporwave);
+}
+
+#slide-seagull {
+  background-image: var(--seagull);
+}
+
+#slide-blocky {
+  background-image: var(--blocky);
+  background-size: auto 100%;
+}
+
+.sample-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.sample-container-caption {
+  font-size: var(--font-size);
+  position: relative;
+  padding-top: 10px;
+  text-align: right;
+}
+
+.sample-slider-container {
+  position: relative;
+  z-index: 1;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 5px 5px 0 5px hsl(0,0%,90%);
+}
+
+.siema {
+  position: relative;
+  height: 100%;
+}
+
+.siema > div {
+  height: 100%;
+  display: flex;
+}
+
+.siema-slide {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100%;
+  min-width: 100%;  
+  position: relative;
+  background-color: white;
+}
+
+.siema-slide-info {
+  position: absolute;
+  background-color: hsla(0,0%,0%,.75);
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity .4s;
+}
+
+.siema-slide-info > span {
+  padding: 45px;
+  font-size: var(--font-size);
+  color: white;
+}
+
+.sample-container:hover .siema-slide-info {
+  opacity: 1;
+}
+
+.siema-control-container {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.siema-control {
+  margin: 10px;
+  background-color: hsl(0,0%,95%);
+  border-radius: 50px;
+  height: 10px;
+  width: 10px;
+}
+
+.siema-control-active {
+  background-color: hsl(230,80%,80%);
+}
+
+
+
+#slide-three {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+}
+
+#about-me {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 30%;
+  padding-top: 80px;
+  font-size: var(--font-size);
+}
+
+#about-me > div:last-child {
+  font-size: 36px;
+  color: hsl(230,70%,68%);
+}
+
+#about-me > div:last-child > b {
+  font-weight: 800 !important;
+  color: hsl(0,0%,0%);
+}
+
+#about-me a {
+    color: hsl(230,70%,68%);
+  text-decoration: none;
+}
+#about-me a:visited {
+    color: hsl(230,70%,68%);
+  text-decoration: none;
+}
+
+
+#external-links {
+  position: absolute;
+  bottom: 80px;
+}
+
+#external-links a {
+  color: black;
+  text-decoration: none;
+}
+
+#external-links a:hover {
+  color: hsl(230,70%,68%);
+}
+
+
+
+
+
+
+#explain-boat {
+  background-color: hsla(0,0%,0%,.6);
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  opacity: 0;
+  transition: opacity .4s;
+}
+
+#explain-boat:hover {
+  opacity: 1
+}
+
+#explain-boat > p {
+  padding: 45px;
+  font-size: var(--font-size);
+  text-align: left;
+}
+
+
+@media (max-width: 1400px) {
+  .flex-container {
+    margin: 80px 100px;
+  }
+}
+
+
+@media (max-width: 1200px) {
+  .flex-container {
+    margin: 40px 50px;
+  }
+}
+
+
+
+
+
+
+@media (max-height: 800px) and (min-width: 1001px) {
+   :root {
+      --font-size: 24px;
+  }
+
+  
+  #slide-two .flex-container {
+    position: relative;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #left-side {
+    position: absolute;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    width: 100%;
+  }
+
+  #right-side {
+    position: absolute;
+    width: 100%;
+    flex-direction: row;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+  .sample-container {
+    margin: 0 !important;
+    width: 300px !important;
+  }
+
+  .sample-slider-container {
+    height: 300px !important;
+  }
+
+  .siema-slide-info span ,
+  .sample-container-caption {
+    font-size: 20px;
+  }
+
+
+  .siema-slide-info > span {
+    padding: 35px;
+  }
+
+
+  @media (max-width: 1050px) {
+      :root {
+      --font-size: 18px;
+  }
+    .sample-container {
+      margin: 0 !important;
+      width: 250px !important;
+    }
+
+    .sample-slider-container {
+      height: 300px !important;
+    }
+
+    .sample-container-caption,
+    .siema-slide-info span {
+      font-size: 16px;
+    }
+
+    .siema-slide-info > span {
+      padding: 25px;
+    }
+  }
+
+}
+
+
+  @media (max-width: 1100px) {
+    .sample-container {
+      max-width: 400px !important;
+    }
+
+    .sample-slider-container {
+      max-height: 350px !important;
+    }
+
+    .sample-container-caption,
+    .siema-slide-info span {
+    }
+
+    .siema-slide-info > span {
+      padding: 35px;
+    }
+    
+    #slide-two {
+      max-height: 800px;
+    }
+  }
+
+
+@media(max-width: 1000px) {
+   
+  #about-me {
+    padding-top: 0;
+  }
+  
+  #external-links {
+    bottom: 30px;
+  }
+  
+   #about-me > div:first-child {
+    margin-top: -20px;
+  }
+  
+  #about-me > div:last-child {
+    margin-top: 20px;
+    font-size: 26px;
+  }
+  
+  #slide-two {
+    max-height: unset;
+    height: auto;
+  }
+  
+  #slide-two .flex-container {
+    flex-direction: column;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  
+  #left-side, #right-side {
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .sample-container {
+    margin-right: 0!important;
+  }
+  
+  #sample-webapp {
+    margin-top: 40px !important;
+        margin-bottom: 40px !important;
+  }
+  
+  .sample-container-caption {
+    text-align: center;
+  }
+  
+  
+  @media (max-width: 1050px) {
+    :root {
+      --font-size: 20px;
+    }
+    
+    .sample-container {
+      margin: 0 !important;
+      width: 250px !important;
+    }
+
+    .sample-slider-container {
+      height: 300px !important;
+    }
+
+    .sample-container-caption,
+    .siema-slide-info span {
+      font-size: 16px;
+    }
+
+    .siema-slide-info > span {
+      padding: 25px;
+    }
+  }
+  
+  
+  @media(max-width: 600px) {
+          :root {
+      --font-size: 16px;
+  }
+  }
+  
+}
+
+
+
+#iframe {
+  overflow: hidden;
+}
+
+.illo {
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+}
+
+
+  </style>
+</head>
+<body translate="no">
+<div class="app">
+<div class="slide" id="slide-one">
+<div class="flex-container">
+<div id="navbar">
+<div id="name">Beau Conti</div>
+<div id="menu">
+<div><a href="#tagline">Work</a></div>
+<div><a href="#slide-three">Contact</a></div>
+</div>
+</div>
+<div id="iframe">
+<svg class="illo"></svg>
+</div>
+<div id="tagline">
+<div>Full-stack web developer based in Baltimore<BR />Graphics and animation dabbler</div>
+</div>
+</div>
+</div>
+<div class="slide" id="slide-two">
+<div class="flex-container">
+<div id="left-side">
+<div id="sample-ecommerce" class="sample-container">
+<div class="sample-slider-container">
+<div class="siema" data-func="">
+<div class="siema-slide" id="slide-miy">
+<div class="siema-slide-info">
+<span>Transformed WordPress site
+into a functioning e-commerce store with
+updated mobile-friendly theme<BR /><BR />
+Planned and managed transition
+to Shopify platform<BR /><BR />
+<a href="https://miyhome.com" target="_blank">view site</a>
+</span>
+</div>
+</div>
+</div>
+<div class="siema-control-container"></div>
+</div>
+<div class="sample-container-caption">e-Commerce Webstores<BR />Built using WordPress, Shopify</div>
+</div>
+</div>
+<div id="right-side">
+<div id="sample-webapp" class="sample-container">
+<div class="sample-slider-container">
+<div class="siema" data-func="mySiema">
+<div class="siema-slide" id="slide-boat">
+<div class="siema-slide-info">
+<span>React App
+for calculating the length of an
+anchor line needed based on water depth
+and weather conditions<BR /><BR /><BR />
+<a href="https://broregard.github.io/anchor" target="_blank">view project</a>
+</span>
+</div>
+</div>
+<div class="siema-slide" id="slide-film">
+<div class="siema-slide-info">
+<span>
+Reservation system for private film festival built using Node.js, MongoDB, and Bootstrap
+<BR /><BR /><BR />
+<a href="http://frozen-beyond-42936.herokuapp.com" target="_blank">view project</a>
+</span>
+</div>
+</div>
+</div>
+<div class="siema-control-container"></div>
+</div>
+<div class="sample-container-caption">Web apps using React<br />and MEN Stack</div>
+</div>
+<div id="sample-hobby" class="sample-container">
+<div class="sample-slider-container">
+<div class="siema" data-func="mySiema2">
+<div class="siema-slide" id="slide-blocky">
+<div class="siema-slide-info">
+<span>Exercise in cloning popular mobile game Crossy Road<BR /><BR /><BR />
+<a href="https://codepen.io/broregard/full/WrmbYX" target="_blank">view project</a>
+</span>
+</div>
+</div>
+<div class="siema-slide" id="slide-splitflap">
+<div class="siema-slide-info">
+<span>
+Library to create responsive split-flap display in 3 modes:<BR /><BR />
+Text, Clock, and Countdown
+<BR /><BR /><BR />
+<a href="https://codepen.io/broregard/full/vroJzR" target="_blank">view project</a>
+</span>
+</div>
+</div>
+<div class="siema-slide" id="slide-seagull">
+<div class="siema-slide-info">
+<span>
+Exercise in creating a simple First Person Shooter game
+<BR /><BR /><BR />
+<a href="https://codepen.io/broregard/full/GdBXev" target="_blank">view project</a>
+</span>
+</div>
+</div>
+<div class="siema-slide" id="slide-vaporwave">
+<div class="siema-slide-info">
+<span>
+Audio visualizer and stats.js with a vaporwave aesthetic
+<BR /><BR /><BR />
+<a href="https://codepen.io/broregard/full/ReBozG" target="_blank">view project</a>
+</span>
+</div>
+</div>
+<div class="siema-slide" id="slide-giraffe">
+<div class="siema-slide-info">
+<span>
+Modeled and animated 3D giraffe in Blender and exported to 3d Javascript environment
+<BR /><BR /><BR />
+<a href="https://codepen.io/broregard/full/jbaWKG" target="_blank">view project</a>
+</span>
+</div>
+</div>
+<div class="siema-slide" id="slide-simon">
+<div class="siema-slide-info">
+<span>
+3D web-based version of the Simon memory game
+<BR /><BR /><BR />
+<a href="https://codepen.io/broregard/full/grGANq" target="_blank">view project</a>
+</span>
+</div>
+</div>
+</div>
+<div class="siema-control-container"></div>
+</div>
+ <div class="sample-container-caption">Personal Projects</div>
+</div>
+</div>
+</div>
+</div>
+<div class="slide" id="slide-three">
+<div id="about-me">
+<div>
+Self-taught developer breaking into the scene<BR />
+Transforming complexity into simplicity<BR />
+And bringing joy to our virtual lives
+</div>
+<div>
+<b>Let's do some work</b><BR />
+<a href="mailto:hire@beau.earth">hire@beau.earth</a>
+</div>
+</div>
+<div id="external-links"><a href="https://codepen.io/broregard" target="_blank">codepen</a>
+</div>
+</div>
+<script src='https://pawelgrzybek.com/siema/assets/siema.min.js'></script>
+<script src='https://unpkg.com/zdog@1/dist/zdog.dist.js'></script>
+<script id="rendered-js">
+      function buildControls() {
+  const funcName = this.selector.dataset.func;
+  const slides = this.selector.querySelectorAll(".siema-slide");
+  const controlContainer = this.selector.parentElement.querySelector(".siema-control-container");
+  slides.forEach((slide, i) => controlContainer.innerHTML += `<div class='siema-control'></div>`);
+
+  const controls = controlContainer.querySelectorAll(".siema-control");
+  controls.forEach((control, i) => {
+    if (controls.length > 1) {
+      control.setAttribute("onclick", `${funcName}.goTo(${i})`);
+      if (i == 0) control.classList.add("siema-control-active");
+    } else {
+      control.style.display = "none";
+    }
+  });
+}
+
+function updateControlIndex() {
+  const controls = this.selector.parentElement.querySelectorAll(".siema-control");
+  controls.forEach((control, i) => {
+    if (i == this.currentSlide) control.classList.add("siema-control-active");
+    else control.classList.remove("siema-control-active")
+  });
+}
+
+const mySiema = new Siema({
+  selector: document.querySelector("#sample-webapp .siema"),
+  onInit: buildControls,
+  onChange: updateControlIndex,
+});
+
+const mySiema2 = new Siema({
+  selector: document.querySelector("#sample-hobby .siema"),
+  onInit: buildControls,
+  onChange: updateControlIndex,
+});
+
+
+
+
+///////////
+
+window.onload = () => loadIllo();
+window.onresize = () => loadIllo();
+
+function loadIllo() {
+  
+var illoElem = document.querySelector('.illo');
+var illoSize = 70;
+var minWindowSize = Math.min( window.innerWidth , (window.innerHeight ) );
+var zoom = Math.floor( minWindowSize / illoSize );
+illoElem.setAttribute( 'width', window.innerWidth ); 
+illoElem.setAttribute( 'height', window.innerHeight);
+
+var TAU = Zdog.TAU;
+var sceneStartRotation = { y: -TAU/9, x: -TAU/20};
+
+var illo = new Zdog.Illustration({
+  element: illoElem,
+  zoom: zoom,
+  resize: true,
+  translate: {y:20},
+  rotate: sceneStartRotation,
+  dragRotate: true,
+  onDragStart: function() {
+    isSpinning = false;
+  },
+});
+
+var quarterTurn = Math.sin( TAU/8 );
+
+// ----- colors ----- //
+
+const hsl = (h,s,l) => `hsl(${h}, ${s}%, ${l}%)`;
+
+var beigeDark = '#F96';
+var beigeLight = '#FC9';
+var skinDark = hsl(20,85,76);
+var skinMedium = hsl(15,90,85);
+var skinLight = '#FAA';
+var navy = '#036';
+var midnight = '#003';
+var auburn = '#903';
+var red = '#C33';
+var sky = '#09D';
+var offWhite = hsl(0,0,95);
+var white = 'white';
+var blueDark = hsl(00,20,50)
+var bluePale = '#CCF';
+
+
+
+// -- models --- //
+
+var ground = new Zdog.Anchor({
+  addTo: illo,
+  translate: { y: 56 },
+});
+
+// ----- dude ----- //
+
+  var dude = new Zdog.Anchor({
+    addTo: ground,
+    translate: { x : 0, z: -35 },
+  });
+
+  var hipX = ( 8 / quarterTurn ) / 2;
+  var hips = new Zdog.Shape({
+    path: [
+      { x: -hipX +1 },
+      { x:  hipX -1 },
+    ],
+    addTo: dude,
+    translate: { y: -49 },
+    // rotate: { x: TAU/16 },
+    stroke: 6,
+    color: hsl(190,30,70),
+  });
+
+  // right thigh
+  var rightThigh = new Zdog.Shape({
+    path: [
+      { y: 0 },
+      { y: 18 },
+    ],
+    addTo: hips,
+    translate: { x: -hipX + 1},
+    stroke: 6,
+    color: hsl(190,30,70),
+  });
+  // right tight line
+  var rightThighLine = rightThigh.copy({
+    addTo: rightThigh,
+    translate: { x: -3.25 },
+    color: white,
+    stroke: 0.5,
+  });
+
+  var shinEnd = { y: 22 };
+
+  var rightShin = rightThigh.copy({
+    path: [
+      { y: 0 },
+      shinEnd,
+    ],
+    addTo: rightThigh,
+    translate: { y: 18 },
+  });
+  // right shin line
+  rightThighLine.copy({
+    path: [
+      { y: -2 },
+      shinEnd,
+    ],
+    addTo: rightShin,
+  });
+
+  var rightAnkle = new Zdog.Shape({
+    path: [
+      { y: 3 },
+      { y: 4 },
+    ],
+    addTo: rightShin,
+    translate: shinEnd,
+    color: skinMedium,
+    stroke: 6,
+  });
+
+  var leftThigh = rightThigh.copy({
+    translate: { x: hipX -1},
+    color: hsl(200,30,60),
+  });
+  // left thigh line
+  rightThighLine.copy({
+    addTo: leftThigh,
+    translate: { x: 3.5 },
+    color: hsl(200,30,90),
+  });
+
+  var leftShin = rightShin.copy({
+    addTo: leftThigh,
+    rotate: { x: -TAU/10 },
+    color: hsl(200,30,60),
+  });
+  // left shin line
+  leftShin.copy({
+    addTo: leftShin,
+    translate: { x: 3.5 },
+    rotate: {},
+    color: hsl(200,30,90),
+    stroke: rightThighLine.stroke,
+  });
+
+  var leftAnkle = rightAnkle.copy({
+    addTo: leftShin,
+    color: skinDark,
+  });
+
+  // shoes
+  [ true, false ].forEach( function( isRight ) {
+    var shoeAngleX = isRight ? -TAU/16 : -hips.rotate.x;
+    var shoe = new Zdog.RoundedRect({
+      width: 2,
+      height: 10,
+      cornerRadius: 2,
+      addTo: isRight ? rightAnkle : leftAnkle,
+      translate: { y: 6, z: 4 },
+      rotate: { x: -TAU/4 - shoeAngleX },
+      color: isRight ? white : offWhite,
+      fill: true,
+      stroke: 6,
+    });
+
+    // laces
+    var lacesGroup = new Zdog.Group({
+      addTo: shoe,
+      translate: { z: -3 },
+    });
+    var shoeLace = new Zdog.Shape({
+      path: [ { x: -1 }, { x: 1 } ],
+      scale: { x: 2 },
+      addTo: lacesGroup,
+      translate: { y: -2 },
+      color: blueDark,
+      stroke: 1,
+    });
+    shoeLace.copy({
+      translate: { y: -4 },
+    });
+
+    new Zdog.Shape({
+      visible: false,
+      addTo: lacesGroup,
+      translate: { y: 4 },
+    });
+
+    // soles
+    new Zdog.RoundedRect({
+      width: 6,
+      height: 13,
+      cornerRadius: 3,
+      addTo: shoe,
+      translate: { z: 3.5 },
+      // rotate: { x: -TAU/4 },
+      stroke: 1,
+      fill: true,
+      color: blueDark,
+    });
+  });
+
+  var torsoX = 6 / quarterTurn;
+  var torso = new Zdog.Shape({
+    path: [
+      { x: -torsoX },
+      { x:  torsoX },
+    ],
+    addTo: dude,
+    translate: { y: -68, z: -2 },
+    color: hsl(55,90,70),
+    stroke: 10, //16
+  })
+  
+  var abs = torso.copy({
+        path: [
+      { x: -torsoX + 3 },
+      { x:  torsoX - 3 },
+    ],
+    translate: {y: 5, z: 1},
+    stroke: 8,
+    addTo: torso
+  }).copy({
+            path: [
+      { x: -torsoX + 5 },
+      { x:  torsoX - 5 },
+    ],
+    stroke: 9,
+    translate: {y: 8, z:1},
+  }).copy({
+                path: [
+      { x: -torsoX + 6 },
+      { x:  torsoX - 6 },
+    ],
+     translate: {y: 12, z:1}
+  });
+
+  var shoulderX = torsoX + 1.5;
+  var rightShoulder = new Zdog.Shape({
+    path: [
+      { y: 0 },
+      { y: 14 },
+    ],
+    addTo: torso,
+    translate: { x: -shoulderX, y: 0 },
+    rotate: { x: TAU/6, z: TAU/8 },
+    rotate: {z: Math.PI/180 * 40, y: -.3},
+    stroke: 6, //10
+    color: hsl(55,90,70),
+  });
+
+  var leftShoulder = rightShoulder.copy({
+    translate: { x: shoulderX, y: 0 },
+    rotate: { x: TAU*3/16, z: -TAU/12 },
+        rotate: {z: -Math.PI/180 * 40, y: .3},
+    color: hsl(50,90,60),
+  });
+
+  var rightArm = new Zdog.Shape({
+    path: [
+      { y: 0 },
+      { y: 14 },
+    ],
+    addTo: rightShoulder,
+    translate: { y: 16 },
+    rotate: {  x: 2.12, z: -.5 },
+    
+    stroke: 4, //8
+    color: skinMedium,
+  });
+
+  var leftArm = rightArm.copy({
+    addTo: leftShoulder,
+    color: skinDark,
+    rotate: { x: TAU/4, z: TAU/8 },
+     rotate: {  x: 2.12, z: .5 },
+  });
+
+  var rightHand = new Zdog.Shape({
+    addTo: rightArm,
+    translate: { x: -0.5, y: 14, z: 1 },
+    stroke: 8,  //10
+    color: skinMedium,
+  });
+
+  // left hand
+  rightHand.copy({
+    addTo: leftArm,
+    color: skinDark,
+  });
+
+  var neckY = -torso.stroke/2;
+  var neck = new Zdog.Shape({
+    path: [ { y: neckY }, { y: neckY - 4 } ],
+    addTo: torso,
+    // translate: { y: }
+    rotate: { x: TAU/16},
+    stroke: 6,
+    color: skinMedium,
+  });
+  // chin
+  var chin = new Zdog.Shape({
+    addTo: neck,
+    translate: { y: neckY - 5, z: 2 },
+    stroke: 8,
+    color: skinMedium,
+  });
+  // forehead
+  var forehead = new Zdog.Ellipse({
+    diameter: 2,
+    addTo: chin,
+    translate: { y: -4 },
+    stroke: 4,
+    color: skinMedium,
+  });
+  // hair big
+  new Zdog.Shape({
+    path: [
+      { y: -1 },
+      { y: -6 }, //-7
+    ],
+    addTo: chin,
+    translate: { x: -1, y: -2, z: -3 },
+    rotate: {z: Math.PI/180*-10, x: Math.PI/180 * -10},
+    stroke: 5,
+    color: "hsl(0, 0%, 10%)"
+  });
+  // hair small
+  new Zdog.Shape({
+    path: [
+      { y: 0 },
+      { y: -6 },
+    ],
+    addTo: chin,
+    translate: { x: 1.25, y: -2, z: -3 },
+        rotate: { x: Math.PI/180 * -10, z: Math.PI/180*5},
+    stroke: 2.5,
+    color: "hsl(0, 0%, 10%)",
+  });
+  // hair back
+  new Zdog.Ellipse({
+    diameter: 3,
+    addTo: chin,
+    translate: { y: -4, z: -4 },
+    stroke: 4,
+    color: "hsl(0, 0%, 10%)",
+  });
+  // smile
+  new Zdog.Ellipse({
+    addTo: chin,
+    quarters: 2,
+    translate: { y: -1.5, z: 3 },
+    rotate: { z: TAU/4 },
+    scale: 3,
+    fill: true,
+    stroke: 0.5,
+    color: white,
+    closed: true,
+  });
+  // eyes
+  var eye = new Zdog.Ellipse({
+    addTo: forehead,
+    quarters: 2,
+    scale: 1,
+    translate: { x: -1, y: 0.5, z: 2 },
+    rotate: { z: -TAU/4 },
+    closed: false,
+    color: midnight,
+    stroke: 0.38,
+    fill: false,
+  });
+  eye.copy({
+    translate: { x: 1, y: 0.5, z: 2 },
+  });
+
+  var ear = new Zdog.Ellipse({
+    diameter: 1.5,
+    addTo: forehead,
+    translate: { x: 3.5, y: 1, z: -1 },
+    rotate: { y: -TAU/8 },
+    stroke: 1,
+    color: skinMedium,
+    fill: true,
+  });
+  ear.copy({
+    translate: { x: -3.5, y: 1, z: -1 },
+    rotate: { y: TAU/8 },
+  });
+
+
+
+
+
+const gray = hsl(50,10,70);
+const lightGray = hsl(50,10,80);
+const darkGray = hsl(40,5,65);
+const blue = hsl(180,90,92);
+
+let laptopAnchor = new Zdog.Anchor({
+  addTo: illo,
+  translate: {y: -9, z: -10}
+});
+
+var lid = new Zdog.Rect({
+  addTo: laptopAnchor,
+  width: 25,
+  height: 15.5,
+  stroke: 2,
+  color: lightGray,
+  fill: true,
+  rotate: {x: Math.PI/180*-20},
+  translate: {z:2.5, y:1},
+  backface: "hsl(0,0%,30%)"
+});
+
+var screen = new Zdog.Rect({
+  addTo: lid,
+  width: 21,
+  height: 12.25,
+  stroke: 1,
+  color: blue,
+  fill: true,
+  translate: {z: -.5}
+});
+
+var logo = new Zdog.Ellipse({
+  addTo: lid,
+  diameter: 4.5,
+  stroke: .5,
+  color: "hsla(0,100%,100%,.3)",
+  fill: true,
+  translate: {z: 1}
+});
+
+var bottom = new Zdog.Rect({
+  addTo: laptopAnchor,
+  width: 25,
+  height: 15.5,
+  stroke: 2,
+  color: gray,
+  fill: true,
+  rotate: {x: Math.PI/180*90},
+  translate: {y: 9, z:-9}
+});
+
+var keyboard = new Zdog.Rect({
+  addTo: bottom,
+  width: 20,
+  height: 12.5,
+  stroke: 1,
+  color: darkGray,
+  fill: true,
+  translate: {z:.5}
+});
+
+
+
+
+// ----- animate ----- //
+
+var ticker = 0;
+var cycleCount = 80;
+var cycleCount2 = 55;
+
+var min = Math.PI/180 * -10;
+var max = Math.PI/180 * 10;
+var laptopBounce = 10;
+
+ let reverse = false;
+ let reverse2 = false;
+
+
+function animate() {
+  var progress = ticker / cycleCount;
+  var progress2 = ticker / cycleCount2;
+  
+  
+  let theta = Zdog.easeInOut(progress % 1);
+  if (theta == 0) reverse = !reverse;
+
+  let tween = theta * max * 2;
+  
+  rightShoulder.rotate.x = reverse ? (max*2) - tween : tween;
+  leftShoulder.rotate.x = reverse ? tween : (max*2) - tween;
+  
+  
+  let theta2 = Zdog.easeInOut(progress2 % 1);
+  if (theta2 == 0) reverse2 = !reverse2; 
+  
+  let tween2 = (theta2 * min * 2);
+  
+  rightArm.rotate.z = reverse2 ? (min*2) - tween2  : tween2 ;
+  leftArm.rotate.z = reverse2 ? -tween2 : -(min*2) + tween2;
+
+  
+  let tween3 = theta * .5 * 2 ;
+  // laptopAnchor.translate.y = reverse ? (.5*2) - tween3 - 8.5 : tween3 - 8.5; 
+  
+  ticker++;
+  
+  illo.updateRenderGraph();
+  requestAnimationFrame( animate );
+}
+
+animate();
+
+}
+    </script>
+</body>
+</html>
+
