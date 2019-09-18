@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 <title>Beau Conti</title>
-<meta name="viewport" content="width=device-width">
+<meta name="viewport" content="width=device-width" charset="UTF-8">
 <style>
     @import url('https://fonts.googleapis.com/css?family=Karla&display=swap');
 
@@ -274,11 +274,7 @@ a:visited {
   color: white;
 }
 
-.sample-container:hover .siema-slide-info {
-  opacity: 1;
-}
-
-.sample-container:active .siema-slide-info {
+.siema-slide-info:hover{
   opacity: 1;
 }
 
@@ -719,7 +715,7 @@ Modeled and animated 3D giraffe in Blender and exported to 3d Javascript environ
 </div>
 </div>
 <div class="siema-slide" id="slide-simon" data-src="https://dl.dropboxusercontent.com/s/psc03tjvabq3imh/simongame.gif">
-<div class="siema-slide-info">
+ <div class="siema-slide-info">
 <span>
 3D web-based version of the Simon memory game
 <BR /><BR /><BR />
@@ -746,14 +742,14 @@ And bringing joy to our virtual lives
 <b>Let's do some work</b><BR />
 <a href="mailto:hire@beau.earth">hire@beau.earth</a>
 </div>
- </div>
+</div>
 <div id="external-links"><a href="https://codepen.io/broregard" target="_blank">codepen</a> / <a href="https://github.com/broregard" target="_blank">github</div>
 </div>
 </div>
 <script src='https://cdn.jsdelivr.net/npm/siema@1.5.1/dist/siema.min.js'></script>
 <script src='https://unpkg.com/zdog@1/dist/zdog.dist.min.js'></script>
 <script id="rendered-js">
-function toggleOpacity(e) {
+      function toggleOpacity(e) {
   if (e.target == this) document.querySelectorAll(".siema-slide-info").forEach(el => el.style.opacity = "0");
 }
 
@@ -1321,7 +1317,8 @@ const mySiema2 = new Siema({
   onInit: buildControls,
   onChange: updateControlIndex,
 });
-    
+
+
 const mySiema3 = new Siema({
   selector: document.querySelector("#sample-ecommerce .siema"),
   onInit: buildControls
