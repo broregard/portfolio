@@ -2,9 +2,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
 <title>Beau Conti</title>
-<meta name="viewport" content="width=device-width">
+<meta name="viewport" content="width=device-width" name="robots" content="noindex" charset="UTF-8">
 <style>
     @import url('https://fonts.googleapis.com/css?family=Karla&display=swap');
 
@@ -12,12 +11,12 @@
   --boat: url("https://dl.dropboxusercontent.com/s/56s99mh4d8hef9h/boat3.jpg");
   --film: url("https://dl.dropboxusercontent.com/s/aa50bsc8zw9iyyt/film2.png");
   --game: url("https://dl.dropboxusercontent.com/s/3dyeh4omt0fqdty/blocky.png");
-  --blocky: url("https://dl.dropboxusercontent.com/s/g4f0lrus24s19fg/blockymov.gif");  
+/*   --blocky: url("https://dl.dropboxusercontent.com/s/g4f0lrus24s19fg/blockymov.gif");  
   --splitflap: url("https://dl.dropboxusercontent.com/s/2g4kzz6m3kw18fw/splitflap.gif");
   --simon: url("https://dl.dropboxusercontent.com/s/psc03tjvabq3imh/simongame.gif");
   --vaporwave: url("https://dl.dropboxusercontent.com/s/u3nllh3vrqf3qyd/vaporwave.gif");
   --giraffe: url("https://dl.dropboxusercontent.com/s/gc6r1hinjejyuxd/giraffemov.gif");
-  --seagull: url("https://dl.dropboxusercontent.com/s/ag1kvyedqkt2vs8/seagull2.gif");
+  --seagull: url("https://dl.dropboxusercontent.com/s/ag1kvyedqkt2vs8/seagull2.gif"); */
   
 
   --miy: url("https://dl.dropboxusercontent.com/s/hum3mnlictseiny/miy.png");
@@ -259,7 +258,7 @@ a:visited {
 
 .siema-slide-info {
   position: absolute;
-  background-color: hsla(0,0%,0%,.5);
+  background-color: hsla(0,0%,0%,.75);
   height: 100%;
   width: 100%;
   display: flex;
@@ -275,7 +274,10 @@ a:visited {
   color: white;
 }
 
-.sample-container:hover .siema-slide-info,
+.sample-container:hover .siema-slide-info {
+  opacity: 1;
+}
+
 .sample-container:active .siema-slide-info {
   opacity: 1;
 }
@@ -672,14 +674,14 @@ Reservation system for private film festival built using Node.js, MongoDB, and B
 <div id="sample-hobby" class="sample-container">
 <div class="sample-slider-container">
 <div class="siema" data-func="mySiema2">
-<div class="siema-slide" id="slide-blocky">
+<div class="siema-slide" id="slide-blocky" data-src="https://dl.dropboxusercontent.com/s/g4f0lrus24s19fg/blockymov.gif">
 <div class="siema-slide-info">
 <span>Exercise in cloning popular mobile game Crossy Road<BR /><BR /><BR />
 <a href="https://codepen.io/broregard/full/WrmbYX" target="_blank">view project</a>
 </span>
 </div>
 </div>
-<div class="siema-slide" id="slide-splitflap">
+<div class="siema-slide" id="slide-splitflap" data-src="https://dl.dropboxusercontent.com/s/2g4kzz6m3kw18fw/splitflap.gif">
 <div class="siema-slide-info">
 <span>
 Library to create responsive split-flap display in 3 modes:<BR /><BR />
@@ -689,7 +691,7 @@ Text, Clock, and Countdown
 </span>
 </div>
 </div>
-<div class="siema-slide" id="slide-seagull">
+<div class="siema-slide" id="slide-seagull" data-src="https://dl.dropboxusercontent.com/s/ag1kvyedqkt2vs8/seagull2.gif">
 <div class="siema-slide-info">
 <span>
 Exercise in creating a simple First Person Shooter game
@@ -698,7 +700,7 @@ Exercise in creating a simple First Person Shooter game
 </span>
 </div>
 </div>
-<div class="siema-slide" id="slide-vaporwave">
+<div class="siema-slide" id="slide-vaporwave" data-src="https://dl.dropboxusercontent.com/s/u3nllh3vrqf3qyd/vaporwave.gif">
 <div class="siema-slide-info">
 <span>
 Audio visualizer and stats.js with a vaporwave aesthetic
@@ -707,7 +709,7 @@ Audio visualizer and stats.js with a vaporwave aesthetic
 </span>
 </div>
 </div>
-<div class="siema-slide" id="slide-giraffe">
+<div class="siema-slide" id="slide-giraffe" data-src="https://dl.dropboxusercontent.com/s/gc6r1hinjejyuxd/giraffemov.gif">
 <div class="siema-slide-info">
 <span>
 Modeled and animated 3D giraffe in Blender and exported to 3d Javascript environment
@@ -716,7 +718,7 @@ Modeled and animated 3D giraffe in Blender and exported to 3d Javascript environ
 </span>
 </div>
 </div>
-<div class="siema-slide" id="slide-simon">
+<div class="siema-slide" id="slide-simon" data-src="https://dl.dropboxusercontent.com/s/psc03tjvabq3imh/simongame.gif">
 <div class="siema-slide-info">
 <span>
 3D web-based version of the Simon memory game
@@ -744,56 +746,14 @@ And bringing joy to our virtual lives
 <b>Let's do some work</b><BR />
 <a href="mailto:hire@beau.earth">hire@beau.earth</a>
 </div>
-</div>
+ </div>
 <div id="external-links"><a href="https://codepen.io/broregard" target="_blank">codepen</a> / <a href="https://github.com/broregard" target="_blank">github</div>
 </div>
 </div>
-<script src='https://pawelgrzybek.com/siema/assets/siema.min.js'></script>
+<script src='https://cdn.jsdelivr.net/npm/siema@1.5.1/dist/siema.min.js'></script>
 <script src='https://unpkg.com/zdog@1/dist/zdog.dist.min.js'></script>
 <script id="rendered-js">
-      function buildControls() {
-  const funcName = this.selector.dataset.func;
-  const slides = this.selector.querySelectorAll(".siema-slide");
-  const controlContainer = this.selector.parentElement.querySelector(".siema-control-container");
-  slides.forEach((slide, i) => controlContainer.innerHTML += `<div class='siema-control'></div>`);
-
-  const controls = controlContainer.querySelectorAll(".siema-control");
-  controls.forEach((control, i) => {
-    if (controls.length > 1) {
-      control.setAttribute("onclick", `${funcName}.goTo(${i})`);
-      if (i == 0) control.classList.add("siema-control-active");
-    } else {
-      control.style.display = "none";
-    }
-  });
-}
-
-function updateControlIndex() {
-  const controls = this.selector.parentElement.querySelectorAll(".siema-control");
-  controls.forEach((control, i) => {
-    if (i == this.currentSlide) control.classList.add("siema-control-active");
-    else control.classList.remove("siema-control-active")
-  });
-}
-
-const mySiema = new Siema({
-  selector: document.querySelector("#sample-webapp .siema"),
-  onInit: buildControls,
-  onChange: updateControlIndex,
-});
-
-const mySiema2 = new Siema({
-  selector: document.querySelector("#sample-hobby .siema"),
-  onInit: buildControls,
-  onChange: updateControlIndex,
-});
-
-
-
-
-///////////
-
-window.onload = () => loadIllo();
+      loadIllo();
 window.onresize = () => loadIllo();
 
 function loadIllo() {
@@ -1306,6 +1266,57 @@ function animate() {
 animate();
 
 }
+
+
+function lazyLoadGifs() {
+  const gifs = document.querySelectorAll('.siema-slide[data-src]')
+
+  gifs.forEach(img => {
+    const src = img.getAttribute("data-src");
+    img.style.backgroundImage = `url(${src})`;
+  });
+}
+  lazyLoadGifs()
+
+
+
+function buildControls() {
+  const funcName = this.selector.dataset.func;
+  const slides = this.selector.querySelectorAll(".siema-slide");
+  const controlContainer = this.selector.parentElement.querySelector(".siema-control-container");
+  slides.forEach((slide, i) => controlContainer.innerHTML += `<div class='siema-control'></div>`);
+
+  const controls = controlContainer.querySelectorAll(".siema-control");
+  controls.forEach((control, i) => {
+    if (controls.length > 1) {
+      control.setAttribute("onclick", `${funcName}.goTo(${i})`);
+      if (i == 0) control.classList.add("siema-control-active");
+    } else {
+      control.style.display = "none";
+    }
+  });
+}
+
+function updateControlIndex() {
+  const controls = this.selector.parentElement.querySelectorAll(".siema-control");
+  controls.forEach((control, i) => {
+    if (i == this.currentSlide) control.classList.add("siema-control-active");
+    else control.classList.remove("siema-control-active")
+  });
+}
+
+const mySiema = new Siema({
+  selector: document.querySelector("#sample-webapp .siema"),
+  onInit: buildControls,
+  onChange: updateControlIndex,
+});
+
+const mySiema2 = new Siema({
+  selector: document.querySelector("#sample-hobby .siema"),
+  onInit: buildControls,
+  onChange: updateControlIndex,
+});
     </script>
 </body>
 </html>
+
