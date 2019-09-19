@@ -1,8 +1,6 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Beau Conti</title>
 <meta name="viewport" content="width=device-width" charset="UTF-8">
 <!-- Primary Meta Tags -->
 <title>Beau Conti</title>
@@ -25,9 +23,6 @@ Freelancer, poetry mangler, Baltimore City rat wrangler.">
 <meta property="twitter:description" content="Full-stack web developer. Graphics and animation dabbler.
 Freelancer, poetry mangler, Baltimore City rat wrangler.">
 <meta property="twitter:image" content="https://dl.dropboxusercontent.com/s/jib9owvvn60b3lu/beaubeaubeau.png">
-    
-    
-    
 <style>
     @import url('https://fonts.googleapis.com/css?family=Karla&display=swap');
 
@@ -48,6 +43,14 @@ Freelancer, poetry mangler, Baltimore City rat wrangler.">
   --font-size: 24px;
 }
 
+iframe {
+  position: absolute;
+  z-index: -1;
+  height: 100vh;
+  width: 100vw;
+  bottom: 0;
+  border: none;
+}
 
 body {
   margin: 0;
@@ -65,6 +68,7 @@ a:visited {
 
 .app {
   width: 100%;
+  position: relative;
 }
 
 .slide {
@@ -75,7 +79,7 @@ a:visited {
   display: flex;
   flex-direction: column;
   height: 100vh;
-    overflow: hidden;
+  overflow: hidden;
 }
 
 .flex-container {
@@ -119,6 +123,10 @@ a:visited {
   text-decoration: none;
 }
 
+#menu div:first-child {
+  margin-right: 20px;
+}
+
 #menu div:last-child {
   margin-left: 20px;
 }
@@ -129,8 +137,9 @@ a:visited {
   justify-content: center;
   position: relative;
  pointer-events: none;
+  margin-left: -100px;
 }
-    
+
 svg {
   overflow: hidden;
   position: absolute;
@@ -138,8 +147,6 @@ svg {
   min-width: 100%;
   border: none;
 }
-
-
 
 
 #tagline {
@@ -613,6 +620,14 @@ svg {
           :root {
       --font-size: 16px;
   }
+    #menu {
+      flex-direction: column;
+    }
+    #menu > div {
+      margin: 0 !important;
+      margin-bottom: 10px !important;
+      text-align: right;
+    }
   }
   
 }
@@ -634,6 +649,7 @@ svg {
 </head>
 <body translate="no">
 <div class="app" ontouchend="toggleOpacity()">
+<iframe id="bokeh" src="https://beau.earth/bokeh.html"></iframe>
 <div class="slide" id="slide-one">
 <div class="flex-container">
 <div id="navbar">
@@ -641,13 +657,14 @@ svg {
 <div id="menu">
 <div><a href="#tagline">Work</a></div>
 <div><a href="#slide-three">Contact</a></div>
+<div><a href="https://docs.google.com/document/d/1v3sUw8Kn4Afc0St4FtmQQknjEaus-MiGDOXM9MDEd6M/edit?usp=sharing" target="_blank">Resume</a></div>
 </div>
 </div>
 <div id="iframe">
 <svg class="illo"></svg>
 </div>
 <div id="tagline">
-<div>Full-stack web developer<BR />Graphics and animation dabbler</div>
+<div>Full-stack web developer based in Baltimore<BR />Graphics and animation dabbler</div>
 </div>
 </div>
 </div>
@@ -663,7 +680,8 @@ svg {
 into a functioning e-commerce store with
 updated mobile-friendly theme<BR /><BR />
 Planned and managed transition
-to Shopify platform
+to Shopify platform<BR /><BR />
+<a href="https://miyhome.com" target="_blank">view site</a>
 </span>
 </div>
 </div>
@@ -749,7 +767,7 @@ Modeled and animated 3D giraffe in Blender and exported to 3d Javascript environ
 </div>
 </div>
 <div class="siema-slide" id="slide-simon" data-src="https://dl.dropboxusercontent.com/s/psc03tjvabq3imh/simongame.gif">
- <div class="siema-slide-info">
+<div class="siema-slide-info">
 <span>
 3D web-based version of the Simon memory game
 <BR /><BR /><BR />
@@ -807,7 +825,7 @@ var illo = new Zdog.Illustration({
   element: illoElem,
   zoom: zoom,
   resize: true,
-  translate: {y:20, x:10},
+  translate: {y:20, x:15},
   rotate: sceneStartRotation,
   dragRotate: true,
   onDragStart: function() {
