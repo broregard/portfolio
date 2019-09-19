@@ -1,1 +1,137 @@
-test
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+    body {
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  height: 100%;
+  margin: 0;
+}
+
+svg{
+  height: 100%;
+  width: 100%;
+}
+  </style>
+</head>
+<body translate="no">
+<svg class="illo"></svg>
+<script src='https://unpkg.com/zdog@1/dist/zdog.dist.js'></script>
+<script id="rendered-js">
+      var illoElem = document.querySelector('.illo');
+var illoSize = 60;
+var minWindowSize = Math.min( window.innerWidth , (window.innerHeight ) );
+var zoom = Math.floor( minWindowSize / illoSize );
+illoElem.setAttribute( 'width', window.innerWidth ); //illoSize * zoom 
+illoElem.setAttribute( 'height', window.innerHeight);
+
+var TAU = Zdog.TAU;
+var sceneStartRotation = { y: -TAU/9, x: -TAU/20};
+
+var illo = new Zdog.Illustration({
+  element: illoElem,
+  zoom: zoom,
+  resize: true,
+  translate: {y:20},
+  rotate: sceneStartRotation,
+  dragRotate: true,
+})
+
+
+
+
+
+var BokehShape = Zdog.Shape.subclass({
+  bokehSize: 5,
+  bokehLimit: 64,
+});
+
+BokehShape.prototype.updateBokeh = function() {
+  // bokeh 0 -> 1
+  this.bokeh = Math.abs( this.sortValue ) / this.bokehLimit;
+  this.bokeh = Math.max( 0, Math.min( 1, this.bokeh ) );
+  return this.bokeh;
+};
+
+BokehShape.prototype.getLineWidth = function() {
+  return this.stroke + this.bokehSize * this.bokeh * this.bokeh;
+};
+
+BokehShape.prototype.getBokehAlpha = function() {
+  var alpha = 1 - this.bokeh;
+  alpha *= alpha;
+  return alpha * 0.8 + 0.2;
+};
+
+BokehShape.prototype.renderCanvasDot = function( ctx ) {
+  this.updateBokeh();
+  ctx.globalAlpha = this.getBokehAlpha(); // set opacity
+  Zdog.Shape.prototype.renderCanvasDot.apply( this, arguments );
+  ctx.globalAlpha = 1; // reset
+};
+
+BokehShape.prototype.renderPath = function( ctx, renderer ) {
+  this.updateBokeh();
+  // set opacity
+  if ( renderer.isCanvas ) {
+    ctx.globalAlpha = this.getBokehAlpha();
+  }
+  Zdog.Shape.prototype.renderPath.apply( this, arguments );
+  // reset opacity
+  if ( renderer.isCanvas ) {
+    ctx.globalAlpha = 1;
+  }
+};
+
+var TAU  = Zdog.TAU;
+  var dotCount = 10;
+
+  for ( var i=0; i < dotCount; i++ ) {
+    var yRotor = new Zdog.Anchor({
+      addTo: illo,
+      translate: {y: 10},
+      rotate: { y: TAU/dotCount * i },
+    });
+
+    new BokehShape({
+      path: [
+        { z: 40*(1 - Math.random()*Math.random()) + 32 },
+      ],
+      addTo: yRotor,
+      rotate: { x: ( Math.random() * 2 - 1 ) * TAU*3/16 },
+      color: "hsla(230,70%,96%)",
+      stroke: 1 + Math.random(),
+      bokehSize: 16,
+      bokehLimit: 74,
+    });
+  }
+
+var ticker = 0;
+var cycleCount = 10000;
+
+function animate() {
+  var progress = ticker / cycleCount;  
+  let theta = Zdog.easeInOut(progress % 1);
+  let tween = theta * TAU;
+  
+  illo.rotate.y = (ticker / cycleCount % 1) * TAU;
+    illo.rotate.x = (ticker / cycleCount*2.4 % 1) * TAU;;
+    illo.rotate.z = (ticker / cycleCount*1.7 % 1) * TAU;;
+  
+ 
+  ticker++;
+  
+  illo.updateRenderGraph();
+  requestAnimationFrame( animate );
+}
+
+animate();
+    </script>
+</body>
+</html>
+
