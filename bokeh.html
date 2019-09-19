@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <style>
-    body {
+  body {
   display:flex;
   align-items: center;
   justify-content: center;
@@ -23,8 +23,8 @@ svg{
 <svg class="illo"></svg>
 <script src='https://unpkg.com/zdog@1/dist/zdog.dist.js'></script>
 <script id="rendered-js">
-function loadIllo() {
- var illoElem = document.querySelector('.illo');
+      function loadIllo() {
+  var illoElem = document.querySelector('.illo');
 var illoSize = 60;
 var minWindowSize = Math.min( window.innerWidth , (window.innerHeight ) );
 var zoom = Math.floor( minWindowSize / illoSize );
@@ -133,10 +133,11 @@ function animate() {
 
 animate();
 }
-    loadIllo();
-    window.onreisze = loadIllo();
-    window.onorientationchange = loadIllo();
-</script>
+
+loadIllo();
+window.onorientationchange = loadIllo();
+window.onresize = () => loadIllo();
+    </script>
 </body>
 </html>
 
