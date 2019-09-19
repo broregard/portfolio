@@ -23,7 +23,8 @@ svg{
 <svg class="illo"></svg>
 <script src='https://unpkg.com/zdog@1/dist/zdog.dist.js'></script>
 <script id="rendered-js">
-      var illoElem = document.querySelector('.illo');
+function loadIllo() {
+ var illoElem = document.querySelector('.illo');
 var illoSize = 60;
 var minWindowSize = Math.min( window.innerWidth , (window.innerHeight ) );
 var zoom = Math.floor( minWindowSize / illoSize );
@@ -131,7 +132,10 @@ function animate() {
 }
 
 animate();
-    </script>
+}
+    loadIllo();
+    window.onreisze = loadIllo();
+</script>
 </body>
 </html>
 
