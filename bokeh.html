@@ -23,12 +23,12 @@ svg{
 <svg class="illo"></svg>
 <script src='https://unpkg.com/zdog@1/dist/zdog.dist.js'></script>
 <script id="rendered-js">
-      function loadIllo() {
-  var illoElem = document.querySelector('.illo');
-var illoSize = 60;
-var minWindowSize = Math.min( window.innerWidth , (window.innerHeight ) );
-var zoom = Math.floor( minWindowSize / illoSize );
-illoElem.setAttribute( 'width', window.innerWidth ); //illoSize * zoom 
+function loadIllo() {
+var illoElem = document.querySelector('.illo');
+var illoSize = 30;
+var maxWindowSize = Math.max( window.innerWidth , (window.innerHeight ) );
+var zoom = Math.floor( maxWindowSize / illoSize );
+illoElem.setAttribute( 'width', window.innerWidth); //illoSize * zoom 
 illoElem.setAttribute( 'height', window.innerHeight);
 
 var TAU = Zdog.TAU;
@@ -38,7 +38,8 @@ var illo = new Zdog.Illustration({
   element: illoElem,
   zoom: zoom,
   resize: true,
-  translate: {y:20},
+  translate: {y: -15},
+
   rotate: sceneStartRotation,
   dragRotate: true,
 })
@@ -101,7 +102,7 @@ var TAU  = Zdog.TAU;
 
     new BokehShape({
       path: [
-        { z: 40*(1 - Math.random()*Math.random()) + 32 },
+        { z: 40*(1 - Math.random()*Math.random()) + 25 },
       ],
       addTo: yRotor,
       rotate: { x: ( Math.random() * 2 - 1 ) * TAU*3/16 },
@@ -135,7 +136,6 @@ animate();
 }
 
 loadIllo();
-window.onorientationchange = loadIllo();
 window.onresize = () => loadIllo();
     </script>
 </body>
