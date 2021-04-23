@@ -28,6 +28,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   height: 100vh;
   background: hsl(217, 63%, 20%);
 }
@@ -42,6 +43,39 @@ body {
   height: 0;
   width: 0;
 }
+  
+.lets-go-right {
+  display: flex;
+  height: 100px;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100vw;
+}
+
+.contact {
+  font-size: 20px;
+  color: white;
+  font-family: monospace,sans-serif;
+  margin-right: 20px;
+  border-radius: 5px;
+  color: white;
+  line-height: 40px;
+  background: white;
+  color: black;
+  height: 40px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.contact a {
+    text-decoration: none;
+}
+.contact a:visited, .contact a:active, .contact a:link {
+  color: black;
+}
+.contact a:hover {
+  color: magenta;
+} 
 </style>
 </head>
 <body translate="no">
@@ -58,6 +92,7 @@ body {
 </linearGradient>
 </defs>
 </svg>
+<div class='lets-go-right'><div class='contact'><a href="mailto:hello@beau.earth">hello@beau.earth</a></div></div>
 <script src='https://unpkg.com/zdog@1/dist/zdog.dist.min.js'></script>
 <script src='https://cdn.jsdelivr.net/npm/zfont@latest/dist/zfont.min.js'></script>
 <script id="rendered-js">
